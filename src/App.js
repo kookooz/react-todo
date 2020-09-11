@@ -24,12 +24,15 @@ class App extends Component {
     };
 
     const updatedItems = [...this.state.items, newItem];
-    this.setState({
-      items: updatedItems,
-      item: "",
-      id: uuidv4(),
-      editItem: false,
-    });
+    this.setState(
+      {
+        items: updatedItems,
+        item: "",
+        id: uuidv4(),
+        editItem: false,
+      },
+      () => console.log(this.state)
+    );
   };
   clearList = () => {
     console.log(" Clear List");
